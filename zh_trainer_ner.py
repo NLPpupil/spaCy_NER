@@ -24,6 +24,7 @@ import sys
 
 训练数据/ 目录存储annotate_ner.py输出的标记文件。
 54，58行多了一个disable=['tokenizer']参数，因为训练数据已经分词。
+58行blank的第一个参数由'en'改成'zh'，表示建立空的中文模型。
 '''
 
 
@@ -33,7 +34,6 @@ for filename in glob.glob('训练数据/*'):
     with open(filename) as f:
         for line in f:
             train_data.append(ast.literal_eval(line))
-
 
 
 
